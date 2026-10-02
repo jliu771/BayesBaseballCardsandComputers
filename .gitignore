@@ -1,0 +1,10 @@
+# The book PDF is a paid ebook: keep it out of the repo
+*.pdf
+
+# Downloaded baseball data and saved results (the notebooks recreate them)
+empirical_bayes/data/
+empirical_bayes/results/
+
+# Python and Jupyter clutter
+__pycache__/
+.ipynb_checkpoints/
