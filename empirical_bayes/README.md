@@ -9,6 +9,8 @@ Each notebook has a topic, a question and goal, a contents list and tags, then a
 - **Reflect**: a question to answer in a sentence or two;
 - **Card connection**: an optional link to the card price project, using simulated data.
 
+Every prompt is numbered *lesson.section.question*. For example, **2.3.1** is Lesson 02, Section 3, prompt 1. The empty code cells and answer cells beneath a prompt carry the same number.
+
 ## Starting up
 
 In an **Anaconda Prompt**:
