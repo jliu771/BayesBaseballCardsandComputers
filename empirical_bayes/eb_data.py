@@ -4,10 +4,11 @@ These do the plumbing that each chapter of the book does in its "Setup"
 section: get the Lahman baseball data, and build the per-player tables.
 The statistics are left for you to write in the notebooks.
 
-Data: Sean Lahman's Baseball Database (CC BY-SA 3.0), via the Chadwick Bureau's
-"baseballdatabank" copy on GitHub. If the download fails, get the CSV version
-from https://sabr.org/lahman-database/ and unzip it anywhere inside
-data/lahman/ next to this file. The loader searches subfolders.
+Data: Sean Lahman's Baseball Database (CC BY-SA 3.0). The simplest route is to
+download the CSV version from https://sabr.org/lahman-database/ and unzip it
+anywhere inside data/lahman/ next to this file (the loader searches subfolders).
+download_lahman() tries the Chadwick Bureau's GitHub copy, which may no longer
+be available at that address.
 """
 
 from __future__ import annotations
@@ -92,8 +93,8 @@ def download_lahman(force: bool = False, retries: int = 3) -> None:
     print(f"Done: {len(done)} of {len(TABLES)} tables ready.")
     if failed:
         print("Could not download: " + ", ".join(failed))
-        print("Get the CSV version from https://sabr.org/lahman-database/ "
-              f"and unzip it inside {DATA_DIR}")
+        print("Download the CSV version from https://sabr.org/lahman-database/ "
+              f"and unzip it inside {DATA_DIR}. The lessons find the files there.")
 
 
 def load_table(name: str) -> pd.DataFrame:
@@ -105,7 +106,10 @@ def load_table(name: str) -> pd.DataFrame:
         path = _find(name)
         if path is None:
             raise FileNotFoundError(f"{name}.csv not found under {DATA_DIR}")
-    return pd.read_csv(path, encoding="latin-1", low_memory=False)
+    try:  # recent SABR releases are UTF-8 (with a byte-order mark); older ones latin-1
+        return pd.read_csv(path, encoding="utf-8-sig", low_memory=False)
+    except UnicodeDecodeError:
+        return pd.read_csv(path, encoding="latin-1", low_memory=False)
 
 
 # --------------------------------------------------------------------------

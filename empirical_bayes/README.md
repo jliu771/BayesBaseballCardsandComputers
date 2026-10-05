@@ -7,7 +7,7 @@ Each notebook has a topic, a question and goal, a contents list and tags, then a
 - **Your turn**: a task, with empty code cells beneath it for your code;
 - **Check**: values to compare against (from the book; recent seasons in the data can shift them slightly);
 - **Reflect**: a question to answer in a sentence or two;
-- **Card connection**: an optional link to the card price project, using simulated data.
+- **Card connection**: an optional exercise linking the lesson to Pokémon trading cards, using simulated data. You don't need to know anything about cards: each prompt explains the terms it uses (sets, booster packs, hits, pull rates, grading). A few prompts mention *Cardprice*, a separate card-price modelling project that isn't in this repository; they say what to do without it.
 
 Every prompt is numbered *lesson.section.question*. For example, **2.3.1** is Lesson 02, Section 3, prompt 1. The empty code cells and answer cells beneath a prompt carry the same number.
 
@@ -21,7 +21,9 @@ cd "C:\Users\XPS-13\Dropbox\Programming\BayesStatsCardsandComputers\empirical_ba
 jupyter lab
 ```
 
-Open a notebook and choose the **Python (pymc)** kernel if asked. Lesson 02's setup cell downloads the baseball data into `data/lahman/` (about 10 MB, once). If the download fails, get the CSV version from https://sabr.org/lahman-database/ and unzip it anywhere inside `data/lahman/`.
+Open a notebook and choose the **Python (pymc)** kernel if asked.
+
+**Data:** download the CSV version of the Lahman database from https://sabr.org/lahman-database/ and unzip it into `data/lahman/` (subfolders are fine). Lesson 02's setup cell also tries an automatic download, but its old GitHub source may no longer be available.
 
 Lesson 07 uses `patsy` for splines. If it's missing: `conda install -n pymc -c conda-forge patsy`.
 
@@ -42,6 +44,9 @@ Lesson 07 uses `patsy` for splines. If it's missing: `conda install -n pymc -c c
 | 11 | `11_simulation` | Ch. 12 | Does empirical Bayes actually work? | simulation, calibration, parameter recovery |
 | 12 | `12_simulating_replications` | Ch. 13 | When does it fail? | replications, sample size |
 | 13 | `13_full_bayes_pymc` | beyond the book | What does full Bayes add? | PyMC 6, hierarchical beta-binomial |
+| 14 | `14_how_strong_is_your_prior` | beyond the book | How much does the prior's strength matter, and when can data pin it down? | prior strength, profile likelihood, sample size, rat tumours |
+
+Lesson 14 also comes as a fully worked, article-style notebook, `14_how_strong_is_your_prior_article.ipynb`, with all code run and results discussed. Try the workbook first.
 
 The lessons build on each other: Lesson 02 saves your prior to `results/results.json` for later lessons, Lesson 06 writes a fitting function reused in 07 and 10, and Lessons 11–12 import the `my_eb.py` module you write in Lesson 10.
 
