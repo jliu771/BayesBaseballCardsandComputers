@@ -7,7 +7,7 @@ Each notebook has a topic, a question and goal, a contents list and tags, then a
 - **Your turn**: a task, with empty code cells beneath it for your code;
 - **Check**: values to compare against (from the book; recent seasons in the data can shift them slightly);
 - **Reflect**: a question to answer in a sentence or two;
-- **Card connection**: an optional exercise linking the lesson to Pokémon trading cards, using simulated data. You don't need to know anything about cards: each prompt explains the terms it uses (sets, booster packs, hits, pull rates, grading). A few prompts mention *Cardprice*, a separate card-price modelling project that isn't in this repository; they say what to do without it.
+- **Card connection**: an optional exercise linking the lesson to Pokémon trading cards, using simulated data. You don't need to know anything about cards: each prompt explains the terms it uses (sets, booster packs, hits, pull rates, grading). A few prompts mention *Cardprice*, a separate card-price modeling project that isn't in this repository; they say what to do without it.
 
 Every prompt is numbered *lesson.section.question*. For example, **2.3.1** is Lesson 02, Section 3, prompt 1. The empty code cells and answer cells beneath a prompt carry the same number.
 
@@ -44,7 +44,7 @@ Lesson 07 uses `patsy` for splines. If it's missing: `conda install -n pymc -c c
 | 11 | `11_simulation` | Ch. 12 | Does empirical Bayes actually work? | simulation, calibration, parameter recovery |
 | 12 | `12_simulating_replications` | Ch. 13 | When does it fail? | replications, sample size |
 | 13 | `13_full_bayes_pymc` | beyond the book | What does full Bayes add? | PyMC 6, hierarchical beta-binomial |
-| 14 | `14_how_strong_is_your_prior` | beyond the book | How much does the prior's strength matter, and when can data pin it down? | prior strength, profile likelihood, sample size, rat tumours |
+| 14 | `14_how_strong_is_your_prior` | beyond the book | How much does the prior's strength matter, and when can data pin it down? | prior strength, profile likelihood, sample size, rat tumors |
 
 Lesson 14 also comes as a fully worked, article-style notebook, `14_how_strong_is_your_prior_article.ipynb`, with all code run and results discussed. Try the workbook first.
 
