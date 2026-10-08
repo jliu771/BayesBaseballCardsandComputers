@@ -8,7 +8,7 @@ The first course here is a set of Jupyter workbooks that follow David Robinson's
 
 | Path | What it is |
 |---|---|
-| `empirical_bayes/` | 13 lesson notebooks on empirical Bayes, using baseball batting averages. See its [README](empirical_bayes/README.md) for the lesson list. |
+| `empirical_bayes/` | 14 lesson notebooks on empirical Bayes, using baseball batting averages. See its [README](empirical_bayes/README.md) for the lesson list. |
 | `empirical_bayes/eb_data.py` | Downloads the baseball data and builds the tables each lesson starts from. |
 | `LEARNING_STATS_HANDOFF.md` | Working notes for the wider learning plan: resources, environment notes, topics so far and open items. |
 

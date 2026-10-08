@@ -219,3 +219,23 @@ def load_prior() -> tuple[float, float]:
     """alpha0, beta0 from Lesson 02 if saved, otherwise the book's values."""
     p = load_result("prior", BOOK_PRIOR)
     return float(p["alpha0"]), float(p["beta0"])
+
+
+def save_table(name: str, df: pd.DataFrame) -> None:
+    """Save a DataFrame (e.g. the simulated card sets) for later lessons."""
+    RESULTS_DIR.mkdir(exist_ok=True)
+    path = RESULTS_DIR / f"{name}.csv"
+    df.to_csv(path, index=False)
+    print(f"Saved '{name}' ({len(df)} rows) to results/{path.name}")
+
+
+def load_saved_table(name: str) -> pd.DataFrame:
+    """Load a DataFrame saved with save_table() in an earlier lesson."""
+    path = RESULTS_DIR / f"{name}.csv"
+    if not path.exists():
+        raise FileNotFoundError(
+            f"results/{path.name} not found. Run the cell that saves "
+            f"'{name}' first (for card_sets, that is the save cell after 2.8.2).")
+    df = pd.read_csv(path)
+    print(f"Loaded '{name}' ({len(df)} rows) from results/{path.name}")
+    return df

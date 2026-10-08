@@ -1,6 +1,6 @@
 # Learning statistics: handoff
 
-Written 2026-10-02. This starts a separate, running topic: learning statistics, Bayesian methods, computation and modelling, in Python where possible. It grew out of the card price project (the reading list for notebooks 04 and 07), but it's its own thread. In time it may become something published regularly: a blog series or even a course.
+Written 2026-10-02. This starts a separate, running topic: learning statistics, Bayesian methods, computation and modeling, in Python where possible. It grew out of the card price project (the reading list for notebooks 04 and 07), but it's its own thread. In time it may become something published regularly: a blog series or even a course.
 
 To pick it up in a new conversation, link the folder holding this file and say: *"Read LEARNING_STATS_HANDOFF.md, then let's continue the learning thread."*
 
@@ -82,7 +82,7 @@ Results worth reusing as teaching material:
 
 A rough sequence, each step anchored to the card project where possible:
 
-1. Probability and simulation: thinking generatively and simulating data before modelling.
+1. Probability and simulation: thinking generatively and simulating data before modeling.
 2. Regression as a model, not a recipe: log scales, interpretation, checking fit (04).
 3. Bayesian basics: priors, likelihood, posterior; grid approximation, then MCMC.
 4. MCMC in practice: what NUTS does, diagnostics, what divergences mean (07).
