@@ -229,13 +229,21 @@ def save_table(name: str, df: pd.DataFrame) -> None:
     print(f"Saved '{name}' ({len(df)} rows) to results/{path.name}")
 
 
+# Where each saved table is written, for the "not found" message
+SAVED_IN = {
+    "card_sets": "the save cell after 2.8.2 (Lesson 02)",
+    "card_sets_posterior": "the save cell after 3.5.2 (Lesson 03)",
+    "card_sets_fdr": "the save cell after 4.6.2 (Lesson 04)",
+}
+
+
 def load_saved_table(name: str) -> pd.DataFrame:
     """Load a DataFrame saved with save_table() in an earlier lesson."""
     path = RESULTS_DIR / f"{name}.csv"
     if not path.exists():
+        where = SAVED_IN.get(name, "the cell that calls save_table")
         raise FileNotFoundError(
-            f"results/{path.name} not found. Run the cell that saves "
-            f"'{name}' first (for card_sets, that is the save cell after 2.8.2).")
+            f"results/{path.name} not found. Run {where} first.")
     df = pd.read_csv(path)
     print(f"Loaded '{name}' ({len(df)} rows) from results/{path.name}")
     return df
